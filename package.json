@@ -1,0 +1,22 @@
+{
+  "name": "media-server",
+  "version": "4.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajilpappachan/media-server.git"
+  },
+  "author": "Ajil Pappachan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajilpappachan/media-server/issues"
+  },
+  "homepage": "https://github.com/ajilpappachan/media-server#readme",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}
