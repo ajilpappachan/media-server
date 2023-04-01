@@ -1,6 +1,7 @@
 import express, { IRouter, Request, Response } from "express";
 import IExpressRouter from "./interfaces/IExpressRouter";
 import getFiles from "./utils/getFiles";
+import * as path from "path";
 
 export default class BaseRouter implements IExpressRouter {
 	private _router: IRouter;
@@ -23,6 +24,14 @@ export default class BaseRouter implements IExpressRouter {
 			const fileData = await getFiles(url);
 			res.json(fileData);
 		});
+
+		this._router.get(
+			"/thumbnail/:name",
+			async (req: Request, res: Response) => {
+				const { name } = req.params;
+				res.sendFile(path.join(__dirname, "/.generated", name));
+			}
+		);
 	}
 
 	public UseRouter(app: express.Application): void {

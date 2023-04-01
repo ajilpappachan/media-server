@@ -5,7 +5,7 @@ export default (url: string): string => {
 	try {
 		split[0] = baseDirectories[split[0]];
 	} catch (error) {
-		console.error(error);
+		console.error("Failed to find base directory", error);
 	}
 	return split.join("/");
 };
