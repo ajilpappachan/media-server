@@ -11,7 +11,7 @@ const generateThumbnailFromVideo = (
 	return new Promise<string>((resolve, reject) => {
 		ffmpeg(dir)
 			.on("filenames", (filenames) => {
-				console.log("Generating thumbnail with filenames", filenames);
+				console.log("Generating thumbnail with filename", filenames[0]);
 			})
 			.on("end", () => {
 				resolve(filename + ".png");
@@ -36,6 +36,7 @@ const generateThumbnailFromImage = (
 ): Promise<string> => {
 	return new Promise((resolve, reject) => {
 		jimp.read(dir, (error, image) => {
+			console.log("Generating thumbnail with filename", filename);
 			if (error) reject(error);
 			image
 				.resize(500, 500)
