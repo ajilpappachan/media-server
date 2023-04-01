@@ -1,22 +1,32 @@
 {
-  "name": "media-server",
-  "version": "4.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ajilpappachan/media-server.git"
-  },
-  "author": "Ajil Pappachan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ajilpappachan/media-server/issues"
-  },
-  "homepage": "https://github.com/ajilpappachan/media-server#readme",
-  "devDependencies": {
-    "typescript": "^5.0.2"
-  }
+	"name": "media-server",
+	"version": "4.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ajilpappachan/media-server.git"
+	},
+	"author": "Ajil Pappachan",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ajilpappachan/media-server/issues"
+	},
+	"homepage": "https://github.com/ajilpappachan/media-server#readme",
+	"devDependencies": {
+		"@types/node": "18.15.11",
+		"@types/react": "18.0.31",
+		"typescript": "^5.0.2"
+	},
+	"dependencies": {
+		"axios": "^1.3.4",
+		"next": "^13.2.4",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
 }
