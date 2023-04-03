@@ -41,7 +41,7 @@ const generateThumbnailFromImage = (
 			image
 				.resize(500, 500)
 				.write(path.join(__dirname, "../.generated", filename + ".png"));
-			resolve(filename + "png");
+			resolve(filename + ".png");
 		});
 	});
 };
