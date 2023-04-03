@@ -4,6 +4,7 @@ import getBackendAndRedirect from "../../src/utils/getBackendAndRedirect";
 import axios from "axios";
 import IFileData from "../../src/interfaces/common/IFileData";
 import IFile from "../../src/interfaces/common/IFile";
+import Folder from "../../components/Folder";
 
 interface FolderPageProps {
 	url: string;
@@ -12,7 +13,11 @@ interface FolderPageProps {
 
 const FolderPage = ({ url, files }: FolderPageProps) => {
 	console.log(files);
-	return <div>{`${url}-${files}`}</div>;
+	return (
+		<div>
+			<Folder files={files} />
+		</div>
+	);
 };
 
 export const getServerSideProps = async (
@@ -28,7 +33,13 @@ export const getServerSideProps = async (
 	return {
 		props: {
 			url: response.url,
-			files: response.files,
+			files: response.files.map((file) => ({
+				name: file.name,
+				type: file.type,
+				thumbnail: file.thumbnail
+					? `${process.env.BACKEND_URL}/thumbnail/${file.thumbnail}`
+					: null,
+			})),
 		},
 	};
 };
