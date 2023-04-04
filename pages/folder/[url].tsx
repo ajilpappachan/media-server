@@ -15,7 +15,7 @@ const FolderPage = ({ url, files }: FolderPageProps) => {
 	console.log(files);
 	return (
 		<div>
-			<Folder files={files} />
+			<Folder files={files} url={url} />
 		</div>
 	);
 };
